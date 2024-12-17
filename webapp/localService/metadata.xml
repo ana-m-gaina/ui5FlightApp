@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="UX_TRAVEL_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+
+            <!-- Carrier Entity -->
+            <EntityType Name="Carrier" sap:label="Carrier" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Carrid"/>
+                </Key>
+                <Property Name="Carrid" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Airline Code"/>
+                <Property Name="Carrname" Type="Edm.String" MaxLength="20" sap:label="Airline Name"/>
+                <Property Name="Currcode" Type="Edm.String" MaxLength="5" sap:label="Currency Code"/>
+                <Property Name="Url" Type="Edm.String" MaxLength="255" sap:label="Website"/>
+                <NavigationProperty Name="to_Flights" Relationship="UX_TRAVEL_SRV.CarrierToFlights" FromRole="Carrier" ToRole="Flight"/>
+            </EntityType>
+
+            <!-- Connection Entity -->
+            <EntityType Name="Connection" sap:label="Connection" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Carrid"/>
+                    <PropertyRef Name="Connid"/>
+                </Key>
+                <Property Name="Carrid" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Airline Code"/>
+                <Property Name="Connid" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Connection ID"/>
+                <Property Name="Cityfrom" Type="Edm.String" MaxLength="20" sap:label="Departure City"/>
+                <Property Name="Cityto" Type="Edm.String" MaxLength="20" sap:label="Arrival City"/>
+                <NavigationProperty Name="to_Flights" Relationship="UX_TRAVEL_SRV.ConnectionToFlights" FromRole="Connection" ToRole="Flight"/>
+            </EntityType>
+
+            <!-- Flight Entity -->
+            <EntityType Name="Flight" sap:label="Flight" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Carrid"/>
+                    <PropertyRef Name="Connid"/>
+                    <PropertyRef Name="Flid"/>
+                </Key>
+                <Property Name="Carrid" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Airline Code"/>
+                <Property Name="Connid" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Connection ID"/>
+                <Property Name="Flid" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Flight ID"/>
+                <Property Name="Fldate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:label="Flight Date"/>
+                <Property Name="Seatsmax" Type="Edm.Int32" sap:label="Maximum Seats"/>
+                <Property Name="Seatsocc" Type="Edm.Int32" sap:label="Occupied Seats"/>
+            </EntityType>
+
+            <!-- Associations -->
+            <Association Name="CarrierToFlights" sap:content-version="1">
+                <End Type="UX_TRAVEL_SRV.Carrier" Multiplicity="1" Role="Carrier"/>
+                <End Type="UX_TRAVEL_SRV.Flight" Multiplicity="*" Role="Flight"/>
+            </Association>
+
+            <Association Name="ConnectionToFlights" sap:content-version="1">
+                <End Type="UX_TRAVEL_SRV.Connection" Multiplicity="1" Role="Connection"/>
+                <End Type="UX_TRAVEL_SRV.Flight" Multiplicity="*" Role="Flight"/>
+            </Association>
+
+            <!-- Entity Container -->
+            <EntityContainer Name="UX_TRAVEL_SRV_Entities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="Carriers" EntityType="UX_TRAVEL_SRV.Carrier"/>
+                <EntitySet Name="Connections" EntityType="UX_TRAVEL_SRV.Connection"/>
+                <EntitySet Name="Flights" EntityType="UX_TRAVEL_SRV.Flight"/>
+                <AssociationSet Name="CarrierToFlightsSet" Association="UX_TRAVEL_SRV.CarrierToFlights">
+                    <End Role="Carrier" EntitySet="Carriers"/>
+                    <End Role="Flight" EntitySet="Flights"/>
+                </AssociationSet>
+                <AssociationSet Name="ConnectionToFlightsSet" Association="UX_TRAVEL_SRV.ConnectionToFlights">
+                    <End Role="Connection" EntitySet="Connections"/>
+                    <End Role="Flight" EntitySet="Flights"/>
+                </AssociationSet>
+            </EntityContainer>
+
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

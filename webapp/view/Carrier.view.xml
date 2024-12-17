@@ -1,0 +1,72 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    controllerName="appns.mdname.controller.Carrier"
+    xmlns="sap.m">
+
+    <Page id="carrierPage" title="{i18n>overviewPageTitle}">
+        <headerContent>
+            <SearchField
+                width="100%"
+                placeholder="Search Carriers..."
+                search="onSearch"/>
+        </headerContent>
+
+        <Table id="carrierTable" items="{Carrier>/}" mode="None">
+            <headerToolbar>
+                <Toolbar id="toolbar">
+                    <Title text="{i18n>overviewPageTitle}"/>
+                    <Button text="Sort by Name" press="onSortName"/>
+                    <Button text="Sort by Id" press="onSortId"/>
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column>
+                    <Text text="{i18n>columnId}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>columnName}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>columnUrl}" />
+                </Column>
+                <Column width="3rem">
+                    <Text text=""/>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem type="Active" press="handleListItemPress">
+                    <cells>
+                        <Text text="{Carrier>Carrid}" />
+                        <Text text="{Carrier>Carrname}" />
+                        <Text text="{Carrier>Url}" />
+                        <Button
+                            icon="sap-icon://delete"
+                            type="Transparent"
+                            press="onDeletePress" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
+        <VBox class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiSmallMarginBegin sapUiSmallMarginEnd">
+            <Title text="Add New Carrier" level="H2"/>
+            <sap.ui.layout.form:SimpleForm
+                id="form0"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                xmlns:sap.ui.layout.form="sap.ui.layout.form"
+                xmlns:sap.ui.core="sap.ui.core">
+                <sap.ui.layout.form:content>
+                    <sap.ui.core:Title text="Carrier Details"/>
+                    <Label text="Carrier ID"/>
+                    <Input width="100%" id="inputCarrid"/>
+                    <Label text="Carrier Name"/>
+                    <Input width="100%" id="inputCarrname"/>
+                    <Label text="URL"/>
+                    <Input width="100%" id="inputUrl"/>
+                </sap.ui.layout.form:content>
+            </sap.ui.layout.form:SimpleForm>
+            <Button text="Add Carrier" type="Emphasized" press="onAddCarrier"/>
+        </VBox>
+    </Page>
+</mvc:View>

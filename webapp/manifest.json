@@ -1,0 +1,129 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "appns.mdname",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "dataSources": {
+      "mainService": {
+        "uri": "/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.130.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "appns.mdname.i18n.i18n"
+        }
+      },
+      "Carrier": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "localService/mockdata/Carrier.json"
+      },
+      "Connections": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "localService/mockdata/Connections.json"
+      },
+      "Flights": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "localService/mockdata/Flights.json"
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "viewPath": "appns.mdname.view",
+        "viewType": "XML",
+        "async": true,
+        "transition": "slide",
+        "bypassed": {
+          "target": ["notFound"]
+        }
+      },
+      "routes": [
+        {
+          "name": "overview",
+          "pattern": "",
+          "target": ["overview"]
+        },
+        {
+          "name": "flights",
+          "pattern": "carriers/{carrid}",
+          "target": ["flights"]
+        },
+        {
+          "name": "connections",
+          "pattern": "carriers/{carrid}/flights/{flightid}",
+          "target": ["connections"]
+        }
+      ],
+      "targets": {
+        "overview": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Carrier",
+          "viewName": "Carrier",
+          "viewLevel": 1
+        },
+        "flights": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Flights",
+          "viewName": "Flights",
+          "viewLevel": 2
+
+        },
+        "connections": {
+          "viewName": "Connections",
+          "viewType": "XML",
+          "viewId": "Connections",
+          "viewLevel": 3
+        },
+        "notFound": {
+          "viewId": "NotFound",
+          "viewName": "NotFound",
+          "transition": "show"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "appns.mdname.view.App",
+      "type": "XML",
+      "id": "App"
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "appnsmdname"
+  }
+}

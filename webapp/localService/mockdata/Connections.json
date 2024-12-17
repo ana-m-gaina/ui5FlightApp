@@ -1,0 +1,111 @@
+[
+    {
+      "Carrid": "AA",
+      "FlightNo": "AA100",
+      "Connid": "AA100-1",
+      "Details": "Check-in opens 2 hours before departure"
+    },
+    {
+      "Carrid": "AA",
+      "FlightNo": "AA200",
+      "Connid": "AA200-1",
+      "Details": "Layover in ORD: 1 hour"
+    },
+    {
+      "Carrid": "AZ",
+      "FlightNo": "AZ300",
+      "Connid": "AZ300-1",
+      "Details": "Connecting bus available from FCO terminal 3"
+    },
+    {
+      "Carrid": "AZ",
+      "FlightNo": "AZ400",
+      "Connid": "AZ400-1",
+      "Details": "Pre-order meals available"
+    },
+    {
+      "Carrid": "FJ",
+      "FlightNo": "FJ500",
+      "Connid": "FJ500-1",
+      "Details": "Free baggage transfer in SYD"
+    },
+    {
+      "Carrid": "FJ",
+      "FlightNo": "FJ600",
+      "Connid": "FJ600-1",
+      "Details": "Immigration check in AKL"
+    },
+    {
+      "Carrid": "DL",
+      "FlightNo": "DL700",
+      "Connid": "DL700-1",
+      "Details": "Priority boarding for SkyMiles members"
+    },
+    {
+      "Carrid": "DL",
+      "FlightNo": "DL800",
+      "Connid": "DL800-1",
+      "Details": "In-flight Wi-Fi available"
+    },
+    {
+      "Carrid": "LH",
+      "FlightNo": "LH900",
+      "Connid": "LH900-1",
+      "Details": "Lounge access at FRA"
+    },
+    {
+      "Carrid": "LH",
+      "FlightNo": "LH1000",
+      "Connid": "LH1000-1",
+      "Details": "Shuttle service to terminal"
+    },
+    {
+      "Carrid": "JL",
+      "FlightNo": "JL1100",
+      "Connid": "JL1100-1",
+      "Details": "Japanese meal service"
+    },
+    {
+      "Carrid": "JL",
+      "FlightNo": "JL1200",
+      "Connid": "JL1200-1",
+      "Details": "Overnight flight with blankets provided"
+    },
+    {
+      "Carrid": "QF",
+      "FlightNo": "QF1300",
+      "Connid": "QF1300-1",
+      "Details": "Complimentary drinks"
+    },
+    {
+      "Carrid": "QF",
+      "FlightNo": "QF1400",
+      "Connid": "QF1400-1",
+      "Details": "Local shuttle to city center"
+    },
+    {
+      "Carrid": "SQ",
+      "FlightNo": "SQ1500",
+      "Connid": "SQ1500-1",
+      "Details": "Stopover in SIN with free city tour"
+    },
+    {
+      "Carrid": "SQ",
+      "FlightNo": "SQ1600",
+      "Connid": "SQ1600-1",
+      "Details": "Priority baggage handling"
+    },
+    {
+      "Carrid": "UA",
+      "FlightNo": "UA1700",
+      "Connid": "UA1700-1",
+      "Details": "In-flight entertainment upgrade"
+    },
+    {
+      "Carrid": "UA",
+      "FlightNo": "UA1800",
+      "Connid": "UA1800-1",
+      "Details": "Mid-flight snack service"
+    }
+  ]
+  

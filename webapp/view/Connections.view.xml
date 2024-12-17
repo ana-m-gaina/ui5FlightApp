@@ -1,0 +1,12 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="appns.mdname.controller.Connections" xmlns="sap.m">
+  <Page id="connectionsPage" title="Connections">
+    <List id="connectionsList" items="{Connections>/filteredConnections}">
+      <items>
+        <StandardListItem
+          title="{Connections>Connid}"
+          description="{Connections>Details}"
+        />
+      </items>
+    </List>
+  </Page>
+</mvc:View>
