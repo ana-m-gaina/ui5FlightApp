@@ -25,7 +25,7 @@ This SAPUI5 application provides a simple interface for viewing and managing car
 ## Screenshots
 
 **Carriers View:**
-![Uploading Screenshot 2024-12-17 at 15.21.47.png…]()
+<img width="1476" alt="Screenshot 2024-12-17 at 15 19 55" src="https://github.com/user-attachments/assets/66f23328-e0b6-4ae0-a502-91c4bb44e23a" />
 
 
 - Search and sorting options are available in the header.
@@ -41,8 +41,9 @@ This SAPUI5 application provides a simple interface for viewing and managing car
 - Clicking on a flight navigates to the Connections view.
 
 **Connections View:**
+<img width="1560" alt="Screenshot 2024-12-17 at 15 21 47" src="https://github.com/user-attachments/assets/7c121f33-829b-4e36-a80b-2992cdce844b" />
 
-<img width="1476" alt="Screenshot 2024-12-17 at 15 19 55" src="https://github.com/user-attachments/assets/66f23328-e0b6-4ae0-a502-91c4bb44e23a" />
+
 
 - Displays details of connections related to the selected flight.
 
