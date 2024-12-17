@@ -1,46 +1,48 @@
-<<<<<<< HEAD
-# ui5FlightApp
-=======
-## Application Details
-|               |
-| ------------- |
-|**Generation Date and Time**<br>Fri Nov 29 2024 13:01:25 GMT+0000 (Coordinated Universal Time)|
-|**App Generator**<br>@sap/generator-fiori-freestyle|
-|**App Generator Version**<br>1.15.6|
-|**Generation Platform**<br>SAP Business Application Studio|
-|**Template Used**<br>simple|
-|**Service Type**<br>File|
-|**Metadata File**<br>metadata.xml|
-|**Module Name**<br>mdname|
-|**Application Title**<br>App Title|
-|**Namespace**<br>appns|
-|**UI5 Theme**<br>sap_horizon|
-|**UI5 Version**<br>1.130.2|
-|**Enable Code Assist Libraries**<br>False|
-|**Enable TypeScript**<br>False|
-|**Add Eslint configuration**<br>False|
+# UI5 Flight App
 
-## mdname
+This SAPUI5 application provides a simple interface for viewing and managing carriers, flights, and connections. It demonstrates how to:
 
-An SAP Fiori application.
+- Display data in tables and lists.
+- Navigate between multiple views (Carriers → Flights → Connections).
+- Implement search and sort functionality.
+- Add and delete data from the model.
 
-### Starting the generated app
+## Features
 
--   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  In order to launch the generated app, simply run the following from the generated app root folder:
+- **Carriers Overview:**
+  - Displays a list of carriers in a `sap.m.Table`.
+  - Supports searching by Carrier ID or Name.
+  - Provides buttons to sort carriers by ID or Name.
+  - Allows adding a new carrier through a simple form.
+  - Enables deleting carriers directly from the table.
 
-```
-    npm start
-```
+- **Flights by Carrier:**
+  - Selecting a carrier navigates to a Flights view that lists all flights for that carrier.
 
-- It is also possible to run the application using mock data that reflects the OData Service URL supplied during application generation.  In order to run the application with Mock Data, run the following from the generated app root folder:
+- **Connections by Flight:**
+  - Selecting a flight navigates to a Connections view showing detailed connections related to that flight.
 
-```
-    npm run start-mock
-```
+## Screenshots
 
-#### Pre-requisites:
-
-1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
+**Carriers View:**
+![Uploading Screenshot 2024-12-17 at 15.21.47.png…]()
 
 
->>>>>>> bb29154 (Initial commit)
+- Search and sorting options are available in the header.
+- Each row is clickable to navigate to the corresponding flights.
+- The "Add New Carrier" form below the table lets you input a new carrier’s details.
+- The trash icon on the far right deletes a carrier.
+
+**Flights View:**
+
+<img width="1571" alt="Screenshot 2024-12-17 at 15 21 41" src="https://github.com/user-attachments/assets/3a9d8f1b-4ef8-40c6-a54d-b6e3221a4bf0" />
+
+- Shows flights related to the previously selected carrier.
+- Clicking on a flight navigates to the Connections view.
+
+**Connections View:**
+
+<img width="1476" alt="Screenshot 2024-12-17 at 15 19 55" src="https://github.com/user-attachments/assets/66f23328-e0b6-4ae0-a502-91c4bb44e23a" />
+
+- Displays details of connections related to the selected flight.
+
